@@ -1,0 +1,15 @@
+--- config.h	2011-02-21 23:09:29.000000000 +0000
++++ config.h.orig	2011-02-21 23:08:57.000000000 +0000
+@@ -51,8 +51,10 @@
+ /* #undef _REENTRANT */
+ 
+ /* debugging stuff */
+-#define SNMP_NO_DEBUGGING
+-#define SNMP_ALWAYS_DEBUG 0
++/* #undef SNMP_NO_DEBUGGING */           /* if defined, we optimize the code
++                                      to exclude all debugging calls. */
++#define SNMP_ALWAYS_DEBUG 1
++                                      ignore the -D flag passed to the cmds */
+ 
+ /* reverse encoding BER packets is both faster and more efficient in space. */
+ #define USE_REVERSE_ASNENCODING       1
