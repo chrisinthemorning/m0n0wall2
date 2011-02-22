@@ -1,5 +1,5 @@
---- M0N0WALL_GENERIC.orig	2011-02-20 14:56:11.000000000 +0000
-+++ M0N0WALL_GENERIC	2011-02-20 14:59:37.000000000 +0000
+--- M0N0WALL_GENERIC.orig	2011-02-20 15:01:45.000000000 +0000
++++ M0N0WALL_GENERIC	2011-02-20 15:25:12.000000000 +0000
 @@ -25,20 +25,17 @@
  options 	SYSVSEM			# SYSV-style semaphores
  options 	_KPOSIX_PRIORITY_SCHEDULING # POSIX P1003_1B real-time extensions
@@ -38,7 +38,17 @@
  device		sn		# SMC's 9000 series of Ethernet chips
  device		xe		# Xircom pccard Ethernet
  
-@@ -224,7 +219,6 @@
+@@ -173,9 +168,6 @@
+ device          wlan_tkip               #802.11 TKIP support
+ device          wlan_xauth              #802.11 external authenticator support
+ device          wlan_acl
+-device          ath
+-device          ath_hal         # Atheros HAL (includes binary component)
+-device          ath_rate_sample # SampleRate rate control for the ath driver
+ device		an		# Aironet 4500/4800 802.11 wireless NICs.
+ device		ral		# Ralink Technology RT2500 wireless NICs.
+ device		wi		# WaveLAN/Intersil/Symbol 802.11 wireless NICs.
+@@ -224,7 +216,6 @@
  device		ohci		# OHCI PCI->USB interface
  device		ehci		# EHCI PCI->USB interface (USB 2.0)
  device		usb		# USB Bus (required)

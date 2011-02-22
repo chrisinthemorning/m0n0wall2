@@ -43,3 +43,14 @@
 	vnconfig -u vn0
 	gzip -9 image.bin
 	mv image.bin.gz /usr/m0n0wall/build81/images/generic-pc-2.0.img
+	
+# Make ISO
+	cd /usr/m0n0wall/build81/tmp
+	mkdir -p /usr/m0n0wall/build81/tmp/cdroot/boot
+	cp /usr/m0n0wall/build81/tmp/bootdir/{cdboot,loader,loader.rc} /usr/m0n0wall/build81/tmp/cdroot
+
+	mkisofs -b "boot/cdboot" -no-emul-boot -A "m0n0wall CD-ROM image" \
+        -c "boot/boot.catalog" -d -r -publisher "foo.com" \
+        -p "Your Name" -V "m0n0wall_cd" -o "m0n0wall.iso" \
+        /usr/m0n0wall/build81/tmp/cdroot
+        mv m0n0wall.iso /usr/m0n0wall/build81/images/generic-pc-2.0.iso
