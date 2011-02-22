@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/csh
 
 # set port options for ports that need user input
 		cd /usr/m0n0wall/build81/tmp

@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/csh
 
 # make bootloader
 	cd /usr/src
-	patch < $MWPATCHDIR/boot/boot.patch
+	patch < /usr/m0n0wall/build81/freebsd6/build/patches/boot/boot.patch
 	cd /sys/boot
 	make clean && make obj && make
 	mkdir /usr/m0n0wall/build81/tmp/bootdir
@@ -32,7 +32,7 @@
 	newfs -b 8192 -f 1024 -o space -m 0 /dev/vn0a
 	mount /dev/vn0a /mnt
 	
-	cp /sys/compile/M0N0WALL_[PLATFORM]/kernel.gz /mnt
+	cp /usr/m0n0wall/build81/tmp/kernel.gz /mnt
 	cp mfsroot.gz /mnt
 	mkdir /mnt/boot
 	cp /usr/m0n0wall/build81/tmp/bootdir/{loader,loader.rc} /mnt/boot
