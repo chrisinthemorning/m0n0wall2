@@ -1,5 +1,10 @@
+--- M0N0WALL_GENERIC.orig	2011-02-20 15:01:45.000000000 +0000
++++ M0N0WALL_GENERIC	2011-02-20 15:52:57.000000000 +0000
+@@ -18,27 +18,26 @@
+ options 	MD_ROOT			# MD is a potential root device
  options 	MSDOSFS			# MSDOS Filesystem
  options 	CD9660			# ISO 9660 Filesystem
++options 	COMPAT_43TTY		# BSD 4.3 TTY compat (sgtty)
  options 	COMPAT_43		# Compatible with BSD 4.3 [KEEP THIS!]
 +options 	COMPAT_FREEBSD7		# Compatible with FreeBSD7
  options 	SCSI_DELAY=5000		# Delay (in ms) before probing SCSI
@@ -26,6 +31,14 @@
  options		IPFIREWALL_FORWARD
  options		IPSTEALTH
  
+@@ -115,7 +114,6 @@
+ device		cardbus		# CardBus (32-bit) bus
+ 
+ # Serial (COM) ports
+-device		sio		# 8250, 16[45]50 based serial ports
+ 
+ # PCI Ethernet NICs.
+ device		de		# DEC/Intel DC21x4x (``Tulip'')
 @@ -139,7 +137,6 @@
  device		nve		# nVidia nForce MCP on-board Ethernet Networking
  device		pcn		# AMD Am79C97x PCI 10/100(precedence over 'lnc')

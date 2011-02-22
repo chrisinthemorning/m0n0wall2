@@ -2,5 +2,5 @@ fetch wget http://m0n0wall2.googlecode.com/svn/trunk/go.sh
 
 then execute go.sh
 
-you will have 5 shellfiles to run , do them starting with 1...
+you will have 5 shell files to run , do them starting with 1...
 
