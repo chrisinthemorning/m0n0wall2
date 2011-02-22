@@ -1,7 +1,7 @@
-﻿#!/bin/sh
+#!/bin/sh
 
 # get build env ready
-pkg_add -r subversion cdrtools curl wget autoconf213 autoconf262
+pkg_add -r subversion cdrtools curl autoconf213 autoconf262
 rehash
 mkdir -p /usr/m0n0wall/build81
 cd  /usr/m0n0wall/build81
