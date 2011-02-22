@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/csh
 
 pkg_add -r wget
 rehash

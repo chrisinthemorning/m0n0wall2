@@ -1,6 +1,10 @@
---- M0N0WALL_GENERIC.orig	2011-02-20 15:01:45.000000000 +0000
-+++ M0N0WALL_GENERIC	2011-02-20 15:25:12.000000000 +0000
-@@ -25,20 +25,17 @@
+ options 	MSDOSFS			# MSDOS Filesystem
+ options 	CD9660			# ISO 9660 Filesystem
+ options 	COMPAT_43		# Compatible with BSD 4.3 [KEEP THIS!]
++options 	COMPAT_FREEBSD7		# Compatible with FreeBSD7
+ options 	SCSI_DELAY=5000		# Delay (in ms) before probing SCSI
+ options 	SYSVSHM			# SYSV-style shared memory
+ options 	SYSVMSG			# SYSV-style message queues
  options 	SYSVSEM			# SYSV-style semaphores
  options 	_KPOSIX_PRIORITY_SCHEDULING # POSIX P1003_1B real-time extensions
  options 	KBD_INSTALL_CDEV	# install a CDEV entry in /dev
@@ -22,7 +26,7 @@
  options		IPFIREWALL_FORWARD
  options		IPSTEALTH
  
-@@ -139,7 +136,6 @@
+@@ -139,7 +137,6 @@
  device		nve		# nVidia nForce MCP on-board Ethernet Networking
  device		pcn		# AMD Am79C97x PCI 10/100(precedence over 'lnc')
  device		re		# RealTek 8139C+/8169/8169S/8110S
@@ -30,7 +34,7 @@
  device		rl		# RealTek 8129/8139
  device		sf		# Adaptec AIC-6915 (``Starfire'')
  device		sis		# Silicon Integrated Systems SiS 900/SiS 7016
-@@ -162,7 +158,6 @@
+@@ -162,7 +159,6 @@
  device		ep		# Etherlink III based cards
  device		fe		# Fujitsu MB8696x based cards
  device		ie		# EtherExpress 8/16, 3C507, StarLAN 10 etc.
@@ -38,7 +42,7 @@
  device		sn		# SMC's 9000 series of Ethernet chips
  device		xe		# Xircom pccard Ethernet
  
-@@ -173,9 +168,6 @@
+@@ -173,9 +169,6 @@
  device          wlan_tkip               #802.11 TKIP support
  device          wlan_xauth              #802.11 external authenticator support
  device          wlan_acl
@@ -48,7 +52,7 @@
  device		an		# Aironet 4500/4800 802.11 wireless NICs.
  device		ral		# Ralink Technology RT2500 wireless NICs.
  device		wi		# WaveLAN/Intersil/Symbol 802.11 wireless NICs.
-@@ -224,7 +216,6 @@
+@@ -224,7 +217,6 @@
  device		ohci		# OHCI PCI->USB interface
  device		ehci		# EHCI PCI->USB interface (USB 2.0)
  device		usb		# USB Bus (required)
