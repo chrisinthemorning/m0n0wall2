@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# kernel compile        - got to remove rg lnc ugen ADAPTIVE_GIANT IPSTATE_MAX IPSTATE_SIZE and rename FAST_IPSEC to IPSEC
+# kernel compile        - got to remove ath/ath_hal rg lnc ugen ADAPTIVE_GIANT IPSTATE_MAX IPSTATE_SIZE and rename FAST_IPSEC to IPSEC
         cd /sys/i386/conf
         cp /usr/m0n0wall/build81/freebsd6/build/kernelconfigs/M0N0WALL_GENERIC* /sys/i386/conf/
         wget http://m0n0wall2.googlecode.com/svn/trunk/M0N0WALL_GENERIC.patch
