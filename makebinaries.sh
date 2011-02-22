@@ -3,7 +3,7 @@
 # set port options for ports that need user input
 		cd /usr/m0n0wall/build81/tmp
 		wget http://m0n0wall2.googlecode.com/svn/trunk/portoptions.tgz
-		tar -zxvf /usr/m0n0wall/build81/portoptions.tgz -C /
+		tar -zxvf /usr/m0n0wall/build81/tmp/portoptions.tgz -C /
  
 # autconf
         rm /usr/local/bin/autoconf
