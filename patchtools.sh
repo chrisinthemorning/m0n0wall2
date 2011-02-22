@@ -1,4 +1,4 @@
-﻿#!/bin/sh
+#!/bin/sh
 
 # ipfilter: ipf.c
         cd /usr/src
