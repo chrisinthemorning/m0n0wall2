@@ -37,8 +37,9 @@
 	
 	cp /usr/m0n0wall/build81/tmp/kernel.gz /mnt
 	cp /usr/m0n0wall/build81/tmp/mfsroot.gz /mnt/
-	mkdir /mnt/boot
+	mkdir -p /mnt/boot/kernel
 	cp /usr/m0n0wall/build81/tmp/bootdir/{loader,loader.rc} /mnt/boot
+	cp /usr/m0n0wall/build81/tmp/acpi.ko /mnt/boot/kernel
 	mkdir /mnt/conf
 	cp /usr/m0n0wall/build81/m0n0fs/conf.default/config.xml /mnt/conf
 	cd /usr/m0n0wall/build81/tmp
@@ -49,7 +50,8 @@
 	
 # Make ISO
 	cd /usr/m0n0wall/build81/tmp
-	mkdir -p /usr/m0n0wall/build81/tmp/cdroot/boot
+	mkdir -p /usr/m0n0wall/build81/tmp/cdroot/boot/kernel
+	cp /usr/m0n0wall/build81/tmp/acpi.ko /usr/m0n0wall/build81/tmp/cdroot/boot/kernel
 	cp /usr/m0n0wall/build81/tmp/bootdir/{cdboot,loader,loader.rc} /usr/m0n0wall/build81/tmp/cdroot/boot
 	cp kernel.gz mfsroot.gz  /usr/m0n0wall/build81/tmp/cdroot/
 	mkisofs -b "boot/cdboot" -no-emul-boot -A "m0n0wall2 CD-ROM image" \
