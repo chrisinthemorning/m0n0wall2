@@ -1,10 +1,8 @@
 critical areas
-	ISO gices ACPI error "ACPI autoload failed - no such file or directory"  after kernel load, before kernel start with copyright
-	trys to mound md0 not md0a
-
-
+	mounts /dev/md0 as r/o ?
 
 areas to investigate impact
+	trys to mound md0 not md0a , so i build for md0 now
 	mklibs complains . file not found
 	atareinit.c not found to compile in freebsd6 repo
 	if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
