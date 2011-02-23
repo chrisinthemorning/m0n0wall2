@@ -1,5 +1,6 @@
 critical areas
 	mounts /dev/md0 as r/o ?
+	make snmpd build without input
 
 areas to investigate impact
 	trys to mound md0 not md0a , so i build for md0 now
