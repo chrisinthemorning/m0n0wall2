@@ -9,7 +9,8 @@
 	cp /usr/obj/usr/src/sys/boot/i386/loader/loader /usr/m0n0wall/build81/tmp/bootdir
 	cp /usr/obj/usr/src/sys/boot/i386/boot2/{boot1,boot2} /usr/m0n0wall/build81/tmp/bootdir
 	cp /usr/obj/usr/src/sys/boot/i386/cdboot/cdboot /usr/m0n0wall/build81/tmp/bootdir
-
+	wget http://m0n0wall2.googlecode.com/svn/trunk/rc.loader
+	mv rc.loader /usr/m0n0wall/build81/tmp/bootdir
 
 # Creating mfsroot 21MB
 	cd /usr/m0n0wall/build81/tmp
