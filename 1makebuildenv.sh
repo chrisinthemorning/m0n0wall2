@@ -52,4 +52,10 @@
 # create login.conf
 	wget http://m0n0wall2.googlecode.com/svn/trunk/login.conf
 	mv login.conf /usr/m0n0wall/build81/m0n0fs/etc/
+	
+# create missing etc files
+	wget http://m0n0wall2.googlecode.com/svn/trunk/etcadditional.tgz
+	tar -xzf etcadditional.tgz -C /usr/m0n0wall/build81/m0n0fs/
+	
 	cd ..
+	
