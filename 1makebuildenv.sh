@@ -48,4 +48,8 @@
 # create php.ini	
 	wget http://m0n0wall2.googlecode.com/svn/trunk/php.ini
 	mv php.ini /usr/m0n0wall/build81/m0n0fs/usr/local/lib/php.ini
+
+# create login.conf
+	wget http://m0n0wall2.googlecode.com/svn/trunk/login.conf
+	mv login.conf /usr/m0n0wall/build81/m0n0fs/etc/
 	cd ..
