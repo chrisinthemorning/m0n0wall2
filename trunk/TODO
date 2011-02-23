@@ -11,7 +11,6 @@ areas to investigate impact
 	disklabel doesn't have -s option anymore
 
 areas to improve
-	snmp compile requires user intervention for default config file
 	support for ALIX/WRAP GENERICwithSerial
 	support for differet image outputs
-	clean up scripts
+	scripts to reverse the build scripts so you can do a clean build

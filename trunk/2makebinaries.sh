@@ -88,9 +88,10 @@
         --enable-mini-agent --disable-privacy --disable-testing-code \
         --disable-shared-version --disable-shared \
         '--with-out-transports=TCP Unix' \
-        '--with-mib-modules=mibII/interfaces mibII/var_route ucd-snmp/vmstat_freebsd2'
-		wget http://m0n0wall2.googlecode.com/svn/trunk/ucd-snmp.config.h.patch
-		patch < ucd-snmp.config.h.patch
+        '--with-mib-modules=mibII/interfaces mibII/var_route ucd-snmp/vmstat_freebsd2' \
+	--with-defaults
+	wget http://m0n0wall2.googlecode.com/svn/trunk/ucd-snmp.config.h.patch
+	patch < ucd-snmp.config.h.patch
         make
         install -s agent/snmpd /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
 # make m0n0wall tools and binaries
