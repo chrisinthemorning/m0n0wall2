@@ -1,13 +1,14 @@
 critical areas
-	mounts /dev/md0 as r/o ?
+	mounts /dev/md0 as r/o ? /etc/rc modified to remount as rw
 	make snmpd build without input
 
 areas to investigate impact
 	trys to mound md0 not md0a , so i build for md0 now
-	mklibs complains . file not found
+	mklibs complains . file not found, this is because of links
 	atareinit.c not found to compile in freebsd6 repo
 	if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
 	disklabel doesn't have -s option anymore
+	freebsd6 repo m0n0wall.files has bin/[:bin/test
 
 areas to improve
 	support for ALIX/WRAP GENERICwithSerial
