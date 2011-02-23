@@ -9,7 +9,7 @@
 # make filesystem structure for image
 	mkdir  m0n0fs tmp images
 	cd m0n0fs
-	mkdir -p etc/rc.d/ bin cf conf conf.default dev etc ftmp mnt modules proc root sbin tmp var libexec lib usr/bin usr/lib usr/libexec usr/local usr/sbin usr/share usr/local/bin usr/local/captiveportal usr/local/lib usr/local/sbin usr/local/www usr/share/misc
+	mkdir -p etc/rc.d/ bin cf conf conf.default dev etc ftmp mnt modules proc root sbin tmp var libexec lib usr/bin usr/lib usr/libexec usr/local usr/sbin usr/share usr/local/bin usr/local/captiveportal usr/local/lib usr/local/sbin usr/local/www usr/share/misc boot/kernel
  
 # insert svn files to filesystem
 	cp -r ../freebsd6/phpconf/ etc/
