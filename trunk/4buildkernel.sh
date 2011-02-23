@@ -15,7 +15,7 @@
         gzip -9 kernel
         mv kernel.gz /usr/m0n0wall/build81/tmp/
         cd modules/usr/src/sys/modules
-        cp dummynet/dummynet.ko boot/kernel/if_tap.ko /boot/kernel/if_vlan.ko ipfw/ipfw.ko /usr/m0n0wall/build81/m0n0fs/modules
+        cp dummynet/dummynet.ko /boot/kernel/if_tap.ko /boot/kernel/if_vlan.ko ipfw/ipfw.ko /usr/m0n0wall/build81/m0n0fs/modules
 
 # make libs
 	cd /usr/m0n0wall/build81/tmp
