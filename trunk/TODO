@@ -1,11 +1,17 @@
-mklibs complains . file not found
-atareinit.c not found to compile in freebsd6 repo
+critical areas
+	ISO gices ACPI error "ACPI autoload failed - no such file or directory"  after kernel load, before kernel start with copyright
+	trys to mound md0 not md0a
 
 
-if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
 
-disklabel doesn't have -s option anymore
+areas to investigate impact
+	mklibs complains . file not found
+	atareinit.c not found to compile in freebsd6 repo
+	if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
+	disklabel doesn't have -s option anymore
 
-snmp compile requires user intervention for default config file
-support for ALIX/WRAP GENERICwithSerial
-support for differnet image outputs
+areas to improve
+	snmp compile requires user intervention for default config file
+	support for ALIX/WRAP GENERICwithSerial
+	support for differet image outputs
+	clean up scripts
