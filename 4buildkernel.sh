@@ -10,6 +10,8 @@
         config M0N0WALL_GENERIC
         cd /sys/i386/compile/M0N0WALL_GENERIC/
         make depend && make
+        strip kernel
+        strip --remove-section=.note --remove-section=.comment kernel
         gzip -9 kernel
         mv kernel.gz /usr/m0n0wall/build81/tmp/
         cd modules/usr/src/sys/modules

@@ -31,7 +31,7 @@
 	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
 	disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1  /dev/md30 auto
 	#  -s /usr/m0n0wall/build81/tmp/bootdir/boot2 ** not supported in disklabel above
-	disklabel -e vn0
+	disklabel -e /dev/md30
 	newfs -b 8192 -f 1024 -o space -m 0 /dev/md30a 
 	mount /dev/md30a /mnt
 	

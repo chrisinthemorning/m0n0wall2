@@ -13,9 +13,10 @@
  
 # insert svn files to filesystem
 	cp -r ../freebsd6/phpconf/ etc/
+	cp -r ../freebsd6/etc/* etc
 	mv etc/rc.bootup  etc/rc.d/
 	cp -r ../freebsd6/webgui/ usr/local/www/
-	cp -r ../freebsd6/captiveportal usr/local/captiveportal
+	cp -r ../freebsd6/captiveportal usr/local/
  
 # set permissions
 	chmod -R 0755 usr/local/www/* usr/local/captiveportal/*
