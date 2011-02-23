@@ -17,8 +17,8 @@
 	dd if=/dev/zero of=mfsroot bs=1k count=21504
 	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/mfsroot -u 20
 	disklabel -rw /dev/md20 auto
-	newfs -b 8192 -f 1024 -o space -m 0 /dev/md20a
-	mount /dev/md20a /mnt
+	newfs -b 8192 -f 1024 -o space -m 0 /dev/md20
+	mount /dev/md20 /mnt
 	cd /mnt
 	tar -cf - -C /usr/m0n0wall/build81/m0n0fs ./ | tar -xvpf -
 	cd /usr/m0n0wall/build81/tmp
