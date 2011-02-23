@@ -1,4 +1,10 @@
 mklibs complains . file not found
+atareinit.c not found to compile in freebsd6 repo
+
+
+if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
+
+disklabel doesn't have -s option anymore
 
 snmp compile requires user intervention for default config file
 support for ALIX/WRAP GENERICwithSerial

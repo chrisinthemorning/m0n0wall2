@@ -2,7 +2,7 @@
 
 # make bootloader
 	cd /usr/src
-	patch < /usr/m0n0wall/build81/freebsd6/build/patches/boot/boot.patch
+	patch < /usr/m0n0wall/build81/freebsd6/build/patches/boot/bootinfo.c.patch 
 	cd /sys/boot
 	make clean && make obj && make
 	mkdir /usr/m0n0wall/build81/tmp/bootdir
@@ -11,23 +11,25 @@
 	cp /usr/obj/usr/src/sys/boot/i386/cdboot/cdboot /usr/m0n0wall/build81/tmp/bootdir
 
 
-# Creating mfsroot 11MB
+# Creating mfsroot 21MB
 	cd /usr/m0n0wall/build81/tmp
-	dd if=/dev/zero of=mfsroot bs=1k count=11264
-	vnconfig -s labels -c vn0 mfsroot
-	disklabel -rw vn0 auto
-	newfs -b 8192 -f 1024 -o space -m 0 /dev/vn0c
-	mount /dev/vn0c /mnt
+	dd if=/dev/zero of=mfsroot bs=1k count=21504
+	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/mfsroot -u 20
+	disklabel -rw /dev/md20 auto
+	newfs -b 8192 -f 1024 -o space -m 0 /dev/md20a
+	mount /dev/md20a /mnt
 	cd /mnt
 	tar -cf - -C /usr/m0n0wall/build81/m0n0fs ./ | tar -xvpf -
+	cd /usr/m0n0wall/build81/tmp
 	umount /mnt
-	vnconfig -u vn0
+	mdconfig -d -u 20
 	gzip -9 mfsroot
 	
-# Make image 7MB
-	dd if=/dev/zero of=image.bin bs=1k count=7168
-	vnconfig -s labels -c vn0 image.bin
-	disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1 -s /usr/m0n0wall/build81/tmp/bootdir/boot2 vn0 auto
+# Make image
+	dd if=/dev/zero of=image.bin bs=1k count=`ls -l mfsroot.gz kernel.gz | tr -s " " " " | cut -f5 -d " " | xargs | tr " " "+" | xargs -I {} echo '(2097152+{})/1024' | bc`
+	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
+	disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1  /dev/md30 auto
+	#  -s /usr/m0n0wall/build81/tmp/bootdir/boot2 ** not supported in disklabel above
 	disklabel -e vn0
 	newfs -b 8192 -f 1024 -o space -m 0 /dev/vn0a
 	mount /dev/vn0a /mnt

@@ -43,4 +43,8 @@
 	perl /usr/m0n0wall/build81/freebsd6/build/minibsd/mkmini.pl /usr/m0n0wall/build81/freebsd6/build/minibsd/m0n0wall.files  / /usr/m0n0wall/build81/m0n0fs/
 	wget ftp://ftp.yzu.edu.tw/mirror/pub2/BSD/m0n0wall/freebsd-4.11/dev.tgz
 	tar -xzf dev.tgz -C /usr/m0n0wall/build81/m0n0fs/
+
+# create php.ini	
+	wget http://m0n0wall2.googlecode.com/svn/trunk/php.ini
+	mv php.ini /usr/m0n0wall/build81/m0n0fs/usr/local/lib/php.ini
 	cd ..
