@@ -56,4 +56,4 @@
         -c "boot/boot.catalog" -d -r -publisher "foo.com" \
         -p "Your Name" -V "m0n0wall_cd" -o "m0n0wall.iso" \
         /usr/m0n0wall/build81/tmp/cdroot
-    mv m0n0wall.iso /usr/m0n0wall/build81/images/generic-pc-2.0.iso
+	mv m0n0wall.iso /usr/m0n0wall/build81/images/generic-pc-2.0.iso
