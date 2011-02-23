@@ -1,5 +1,6 @@
+m0n0builder81# diff -u M0N0WALL_GENERIC.orig M0N0WALL_GENERIC
 --- M0N0WALL_GENERIC.orig	2011-02-20 15:01:45.000000000 +0000
-+++ M0N0WALL_GENERIC	2011-02-20 15:52:57.000000000 +0000
++++ M0N0WALL_GENERIC	2011-02-20 16:01:31.000000000 +0000
 @@ -18,27 +18,26 @@
  options 	MD_ROOT			# MD is a potential root device
  options 	MSDOSFS			# MSDOS Filesystem
@@ -55,7 +56,7 @@
  device		sn		# SMC's 9000 series of Ethernet chips
  device		xe		# Xircom pccard Ethernet
  
-@@ -173,9 +169,6 @@
+@@ -173,10 +169,11 @@
  device          wlan_tkip               #802.11 TKIP support
  device          wlan_xauth              #802.11 external authenticator support
  device          wlan_acl
@@ -63,9 +64,23 @@
 -device          ath_hal         # Atheros HAL (includes binary component)
 -device          ath_rate_sample # SampleRate rate control for the ath driver
  device		an		# Aironet 4500/4800 802.11 wireless NICs.
++device          ath             # Atheros pci/cardbus NIC's
++device          ath_hal         # pci/cardbus chip support
++options         AH_SUPPORT_AR5416       # enable AR5416 tx/rx descriptors
++device          ath_rate_sample # SampleRate tx rate control for ath
  device		ral		# Ralink Technology RT2500 wireless NICs.
  device		wi		# WaveLAN/Intersil/Symbol 802.11 wireless NICs.
-@@ -224,7 +217,6 @@
+ 
+@@ -189,7 +186,7 @@
+ device		md		# Memory "disks"
+ device		gif		# IPv6 and IPv4 tunneling
+ device		stf		# 6to4 IPv6 over IPv4 encapsulation
+-
++device		firmware	# firmware assist module
+ device		if_bridge	#Bridge interface
+ device          vlan
+ 
+@@ -224,7 +221,6 @@
  device		ohci		# OHCI PCI->USB interface
  device		ehci		# EHCI PCI->USB interface (USB 2.0)
  device		usb		# USB Bus (required)
