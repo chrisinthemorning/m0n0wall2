@@ -75,6 +75,25 @@
         make
         install -s work/ipsec-tools-*/src/racoon/.libs/racoon /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
         install -s work/ipsec-tools-*/src/libipsec/.libs/libipsec.so.0 /usr/m0n0wall/build81/m0n0fs/usr/local/lib
+
+# make m0n0wall tools and binaries
+        cd /usr/m0n0wall/build81/tmp
+        cp -r ../freebsd6/build/tools .
+        cd tools
+        gcc -o stats.cgi stats.c
+        gcc -o minicron minicron.c
+        # gcc -o atareinit atareinit.c
+        gcc -o choparp choparp.c
+        gcc -o verifysig -lcrypto verifysig.c
+        gcc -o dnswatch dnswatch.c
+        install -s choparp /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
+        install -s stats.cgi /usr/m0n0wall/build81/m0n0fs/usr/local/www
+        install -s minicron /usr/m0n0wall/build81/m0n0fs//usr/local/bin
+        install -s verifysig /usr/m0n0wall/build81/m0n0fs/usr/local/bin
+        install -s dnswatch /usr/m0n0wall/build81/m0n0fs/usr/local/bin
+        install runsntp.sh /usr/m0n0wall/build81/m0n0fs/usr/local/bin
+        install ppp-linkup vpn-linkdown vpn-linkup /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
+
 # ucd-snmp - requires user input
         rm /usr/local/bin/autoconf
         rm /usr/local/bin/autoheader
@@ -94,20 +113,3 @@
 	patch < ucd-snmp.config.h.patch
         make
         install -s agent/snmpd /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
-# make m0n0wall tools and binaries
-        cd /usr/m0n0wall/build81/tmp
-        cp -r ../freebsd6/build/tools .
-        cd tools
-        gcc -o stats.cgi stats.c
-        gcc -o minicron minicron.c
-        # gcc -o atareinit atareinit.c
-        gcc -o choparp choparp.c
-        gcc -o verifysig -lcrypto verifysig.c
-        gcc -o dnswatch dnswatch.c
-        install -s choparp /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
-        install -s stats.cgi /usr/m0n0wall/build81/m0n0fs/usr/local/www
-        install -s minicron /usr/m0n0wall/build81/m0n0fs//usr/local/bin
-        install -s verifysig /usr/m0n0wall/build81/m0n0fs/usr/local/bin
-        install -s dnswatch /usr/m0n0wall/build81/m0n0fs/usr/local/bin
-        install runsntp.sh /usr/m0n0wall/build81/m0n0fs/usr/local/bin
-        install ppp-linkup vpn-linkdown vpn-linkup /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
