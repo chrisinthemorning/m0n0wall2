@@ -4,3 +4,4 @@ then execute go.sh
 
 you will have 5 shell files to run , do them starting with 1...
 
+if all goes well, you will be prompted for snmp default config during the build, then have generic iso and generic img in /usr/m0n0wall/build81/images/
