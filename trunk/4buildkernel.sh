@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/bash
 
 # kernel compile	got to remove ath/ath_hal rg lnc ugen ADAPTIVE_GIANT IPSTATE_MAX IPSTATE_SIZE and sio
 #					rename FAST_IPSEC to IPSEC
