@@ -3,6 +3,7 @@ critical areas
 	group users need /usr/sbin/pwd_mkdb -p /etc/master.passwd  added to /etc/rc
 	make snmpd build without input
 	firmware.img needs to be added to iso so you can install.  what is firmware.img ?
+	/etc/rc modified to disable ipf with ipf -D
 
 areas to investigate impact
 	trys to mound md0 not md0a , so i build for md0 now
