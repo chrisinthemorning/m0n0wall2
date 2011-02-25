@@ -7,10 +7,10 @@
         make
         install -s /usr/src/sbin/ipf/ipf/ipf /usr/m0n0wall/build81/m0n0fs/usr/sbin/
 # syslogd circular logging support and ipv6 support
-        /usr/src/usr.sbin/syslogd
+        cd /usr/src/usr.sbin/syslogd
         patch -R < /usr/m0n0wall/build81/freebsd6/build/patches/user/syslogd.c.ipv6.patch
         cd /usr/src
-	patch < /usr/m0n0wall/build81/freebsd6/build/patches/user/syslogd.c.patch
+		patch < /usr/m0n0wall/build81/freebsd6/build/patches/user/syslogd.c.patch
         cd usr.sbin
         tar xfvz /usr/m0n0wall/build81/freebsd6/build/patches/user/clog-1.0.1.tar.gz
         cd syslogd
