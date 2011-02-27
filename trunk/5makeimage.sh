@@ -27,27 +27,27 @@
 	gzip -9 mfsroot
 	
 # Make img
-	dd if=/dev/zero of=image.bin bs=1k count=`ls -l mfsroot.gz kernel.gz | tr -s " " " " | cut -f5 -d " " | xargs | tr " " "+" | xargs -I {} echo '(2097152+{})/1024' | bc`
-	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
-	disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1  /dev/md30 auto
-	#  -s /usr/m0n0wall/build81/tmp/bootdir/boot2 ** not supported in disklabel above
-	disklabel -e /dev/md30
-	newfs -b 8192 -f 1024 -o space -m 0 /dev/md30a 
-	mount /dev/md30a /mnt
-	
-	cp /usr/m0n0wall/build81/tmp/kernel.gz /mnt
-	cp /usr/m0n0wall/build81/tmp/mfsroot.gz /mnt/
-	mkdir -p /mnt/boot/kernel
-	cp /usr/m0n0wall/build81/tmp/bootdir/{loader,loader.rc} /mnt/boot
-	cp /usr/m0n0wall/build81/tmp/acpi.ko /mnt/boot/kernel
-	mkdir /mnt/conf
-	cp /usr/m0n0wall/build81/m0n0fs/conf.default/config.xml /mnt/conf
-	cd /usr/m0n0wall/build81/tmp
-	umount /mnt
-	mdconfig -d -u 30
-	gzip -9 image.bin
-	mv image.bin.gz /usr/m0n0wall/build81/images/generic-pc-2.0.img
-	
+	# dd if=/dev/zero of=image.bin bs=1k count=`ls -l mfsroot.gz kernel.gz | tr -s " " " " | cut -f5 -d " " | xargs | tr " " "+" | xargs -I {} echo '(2097152+{})/1024' | bc`
+	# mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
+	# disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1  /dev/md30 auto
+	# #  -s /usr/m0n0wall/build81/tmp/bootdir/boot2 ** not supported in disklabel above
+	# disklabel -e /dev/md30
+	# newfs -b 8192 -f 1024 -o space -m 0 /dev/md30a 
+	# mount /dev/md30a /mnt
+	# 
+	# cp /usr/m0n0wall/build81/tmp/kernel.gz /mnt
+	# cp /usr/m0n0wall/build81/tmp/mfsroot.gz /mnt/
+	# mkdir -p /mnt/boot/kernel
+	# cp /usr/m0n0wall/build81/tmp/bootdir/{loader,loader.rc} /mnt/boot
+	# cp /usr/m0n0wall/build81/tmp/acpi.ko /mnt/boot/kernel
+	# mkdir /mnt/conf
+	# cp /usr/m0n0wall/build81/m0n0fs/conf.default/config.xml /mnt/conf
+	# cd /usr/m0n0wall/build81/tmp
+	# umount /mnt
+	# mdconfig -d -u 30
+	# gzip -9 image.bin
+	# mv image.bin.gz /usr/m0n0wall/build81/images/generic-pc-2.0.img
+	# 
 # Make ISO
 	cd /usr/m0n0wall/build81/tmp
 	mkdir -p /usr/m0n0wall/build81/tmp/cdroot/boot/kernel
