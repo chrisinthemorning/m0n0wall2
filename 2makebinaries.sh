@@ -28,7 +28,7 @@
         tar -zxf mini_httpd-1.19.tar.gz
         rm mini_httpd-1.19.tar.gz
         cd mini_httpd-1.19/
-        patch < ../../freebsd6/build/patches/packages/mini_httpd.patchmake
+        patch < ../../freebsd6/build/patches/packages/mini_httpd.patch
         make
         install -s mini_httpd ../../m0n0fs/usr/local/sbin
         cd ..

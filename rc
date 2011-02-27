@@ -7,7 +7,7 @@
 # All rights reserved.
 /sbin/mount -o rw /dev/md0 /
 /usr/sbin/pwd_mkdb -p /etc/master.passwd
-ipf -D
+/sbin/ipf -D
 
 stty status '^T'
 
