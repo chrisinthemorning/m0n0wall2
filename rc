@@ -6,8 +6,6 @@
 # Copyright (C) 2003-2005 Manuel Kasper <mk@neon1.net>.
 # All rights reserved.
 /sbin/mount -o rw /dev/md0 /
-/usr/sbin/pwd_mkdb -p /etc/master.passwd
-/sbin/ipf -D
 
 stty status '^T'
 
@@ -46,4 +44,5 @@ cd /var/run && cp /dev/null utmp && chmod 644 utmp
 # let the PHP-based configuration subsystem set up the system now
 # /etc/rc.bootup
 /bin/sh
+echo "execute /etc/rc.bootup"
 exit 0
