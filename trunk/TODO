@@ -1,12 +1,10 @@
 critical areas
-	mounts /dev/md0 as r/o ? /etc/rc modified to remount as rw
-	group users need /usr/sbin/pwd_mkdb -p /etc/master.passwd  added to /etc/rc
-	make snmpd build without input
 	firmware.img needs to be added to iso so you can install.  what is firmware.img ?
 	/etc/rc modified to disable ipf with ipf -D
 
 areas to investigate impact
-	trys to mound md0 not md0a , so i build for md0 now
+	mounts /dev/md0 as r/o ? /etc/rc modified to remount as rw
+	trys to mount md0 not md0a , so i build for md0 now
 	mklibs complains . file not found, this is because of links
 	atareinit.c not found to compile in freebsd6 repo
 	if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
