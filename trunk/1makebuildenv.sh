@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 # get build env ready
 	pkg_add -r subversion cdrtools curl autoconf213 autoconf262
