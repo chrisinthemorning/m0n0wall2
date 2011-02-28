@@ -10,5 +10,7 @@ wget http://m0n0wall2.googlecode.com/svn/trunk/3patchtools.sh
 wget http://m0n0wall2.googlecode.com/svn/trunk/4buildkernel.sh
 wget http://m0n0wall2.googlecode.com/svn/trunk/5makeimage.sh
 
-echo "start a bash shell, can cd to /usr/m0n0wall/build81"
+echo "I will leave you in bash now"
 echo "run 1makebuildenv.sh , then 2makebinaries.sh, then 3patchtools.sh etc"
+/usr/local/bin/bash
+
