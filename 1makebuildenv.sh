@@ -22,8 +22,8 @@
 	chmod -R 0755 usr/local/www/* usr/local/captiveportal/*
  
 # create links
-	ln -s cf/conf conf
-	ln -s var/run/htpasswd usr/local/www/.htpasswd
+	ln -s /cf/conf conf
+	ln -s /var/run/htpasswd usr/local/www/.htpasswd
  
 # configure build information
 	echo "generic-pc-cdrom" > etc/platform
