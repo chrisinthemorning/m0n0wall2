@@ -60,22 +60,30 @@
         cd /usr/ports/net/isc-dhcp31-relay
         make
         install -s work/dhcp-*/work.freebsd/relay/dhcrelay /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
-# ISC dhcp-server - requires user input
+# ISC dhcp-server
         cd /usr/ports/net/isc-dhcp31-server
         make
         install -s work/dhcp-*/work.freebsd/server/dhcpd /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
-# dnsmasq - requires user input
+# dnsmasq
         cd /usr/ports/dns/dnsmasq
-	make
+		make
         install -s work/dnsmasq-*/src/dnsmasq /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
-# ipsec-tools - requires user input
+# ipsec-tools
         cd /usr/ports/security/ipsec-tools
 		wget http://m0n0wall2.googlecode.com/svn/trunk/ipsec-tools.Makefile.patch
 		patch < ipsec-tools.Makefile.patch
         make
         install -s work/ipsec-tools-*/src/racoon/.libs/racoon /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
         install -s work/ipsec-tools-*/src/libipsec/.libs/libipsec.so.0 /usr/m0n0wall/build81/m0n0fs/usr/local/lib
-
+# dhcp6
+		cd /usr/ports/net/dhcp6
+		make
+		install -s work/wide-dhc*/dhcp6c /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
+		install -s work/wide-dhc*/dhcp6s /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
+# sixxs-aiccu		
+		cd /usr/ports/net/sixxs-aiccu/
+		make
+		install -s work/aiccu/unix-console/aiccu /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/sixxs-aiccu
 # make m0n0wall tools and binaries
         cd /usr/m0n0wall/build81/tmp
         cp -r ../freebsd6/build/tools .
@@ -94,7 +102,7 @@
         install runsntp.sh /usr/m0n0wall/build81/m0n0fs/usr/local/bin
         install ppp-linkup vpn-linkdown vpn-linkup /usr/m0n0wall/build81/m0n0fs/usr/local/sbin
 
-# ucd-snmp - requires user input
+# ucd-snmp
         rm /usr/local/bin/autoconf
         rm /usr/local/bin/autoheader
         ln -s /usr/local/bin/autoconf-2.62 /usr/local/bin/autoconf

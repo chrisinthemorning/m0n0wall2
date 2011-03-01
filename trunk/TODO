@@ -1,6 +1,5 @@
 critical areas
 	firmware.img needs to be added to iso so you can install.  what is firmware.img ?
-	/etc/rc modified to disable ipf with ipf -D
 
 areas to investigate impact
     some kernel features removed, drivers and ipf maxstates
@@ -16,3 +15,8 @@ areas to improve
 	support for ALIX/WRAP GENERICwithSerial
 	support for differet image outputs
 	scripts to reverse the build scripts so you can do a clean build
+	
+	Missing Binaries
+	sixxs-aiccu
+	mpd4
+	/usr/local/bin/mbmon
