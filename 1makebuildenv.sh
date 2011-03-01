@@ -20,6 +20,7 @@
  
 # set permissions
 	chmod -R 0755 usr/local/www/* usr/local/captiveportal/*
+	chmod a+rx etc/rc.reboot
  
 # create links
 	ln -s /cf/conf conf
