@@ -15,8 +15,4 @@ areas to improve
 	support for ALIX/WRAP GENERICwithSerial
 	support for differet image outputs
 	scripts to reverse the build scripts so you can do a clean build
-	
-	Missing Binaries
-	sixxs-aiccu
-	mpd4
-	/usr/local/bin/mbmon
+

@@ -84,6 +84,15 @@
 		cd /usr/ports/net/sixxs-aiccu/
 		make
 		install -s work/aiccu/unix-console/aiccu /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/sixxs-aiccu
+# mpd4
+		cd /usr/ports/net/mpd4
+		make
+		install -s work/mpd-4.4.1/src/mpd4 /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
+# mbmon
+		cd /usr/ports/sysutils/mbmon
+		make
+		install -s work/xmbmon205/mbmon /usr/m0n0wall/build81/m0n0fs/usr/local/bin/
+
 # make m0n0wall tools and binaries
         cd /usr/m0n0wall/build81/tmp
         cp -r ../freebsd6/build/tools .
