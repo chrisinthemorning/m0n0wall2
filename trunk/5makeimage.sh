@@ -29,9 +29,9 @@
 # Make img
 	dd if=/dev/zero of=image.bin bs=1k count=`ls -l mfsroot.gz kernel.gz | tr -s " " " " | cut -f5 -d " " | xargs | tr " " "+" | xargs -I {} echo '(2097152+{})/1024' | bc`
 	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
-	disklabel -Brw -b /usr/m0n0wall/build81/tmp/bootdir/boot1  /dev/md30 auto
-	disklabel -rw /dev/md30 auto
-	newfs -b 8192 -f 1024 -o space -m 0 /dev/md30
+	disklabel  -wn  /dev/md30 auto |  awk '/unused/{if (M==""){sub("unused","4.2BSD");M=1}}{print}' > md.label
+        bsdlabel -m  i386 -R -B -b /usr/m0n0wall/build81/tmp/bootdir/boot1 /dev/md30 md.label
+        newfs -b 8192 -f 1024 -o space -m 0 /dev/md30a
 	mount /dev/md30 /mnt
 	
 	cp /usr/m0n0wall/build81/tmp/kernel.gz /mnt
