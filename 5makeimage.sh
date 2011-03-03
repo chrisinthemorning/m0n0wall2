@@ -60,7 +60,7 @@
 	cd /usr/m0n0wall/build81/tmp
 	umount /mnt
 	mdconfig -d -u 30
-	gzip -9 image.bin
+	gzip -9f image.bin
 	cp image.bin.gz /usr/m0n0wall/build81/tmp/cdroot/firmware.img
 	mv image.bin.gz /usr/m0n0wall/build81/images/generic-pc-2.0.img
 	 
