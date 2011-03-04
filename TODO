@@ -1,5 +1,5 @@
 critical areas
-	firmware.img needs to be added to iso so you can install.  what is firmware.img ?
+	rtadvd missing
 
 areas to investigate impact
     some kernel features removed, drivers and ipf maxstates
