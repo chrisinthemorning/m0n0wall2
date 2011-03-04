@@ -1,7 +1,8 @@
 critical areas
-	rtadvd missing
+	
 
 areas to investigate impact
+    GEOM errors on boot
     some kernel features removed, drivers and ipf maxstates
 	mounts /dev/md0 as r/o ? /etc/rc modified to remount as rw
 	trys to mount md0 not md0a , so i build for md0 now
