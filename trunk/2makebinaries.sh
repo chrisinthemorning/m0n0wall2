@@ -87,7 +87,6 @@
 # rtadvd		
 		cd /usr/src/usr.sbin/rtadvd
 		make
-		strip -s rtadvd
 		install -s rtadvd /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
 # mpd4
 		cd /usr/ports/net/mpd4
