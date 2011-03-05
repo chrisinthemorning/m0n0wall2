@@ -59,6 +59,8 @@
 	tar -xzf etcadditional.tgz -C /usr/m0n0wall/build81/m0n0fs/
 	wget http://m0n0wall2.googlecode.com/svn/trunk/rc
 	mv rc /usr/m0n0wall/build81/m0n0fs/etc
+# insert dhclient	
+	cp /sbin/dhclient /usr/m0n0wall/build81/m0n0fs/sbin/
 	
 	cd ..
 	
