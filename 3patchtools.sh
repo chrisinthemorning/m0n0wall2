@@ -6,6 +6,7 @@
         cd sbin/ipf
         make
         install -s /usr/src/sbin/ipf/ipf/ipf /usr/m0n0wall/build81/m0n0fs/usr/sbin/
+        install -s /usr/src/sbin/ipf/ipfstat/ipfstat /usr/m0n0wall/build81/m0n0fs/usr/sbin/
 # syslogd circular logging support and ipv6 support
         cd /usr/src/usr.sbin/syslogd
         patch -R < /usr/m0n0wall/build81/freebsd6/build/patches/user/syslogd.c.ipv6.patch
