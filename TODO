@@ -4,7 +4,8 @@ critical areas
 		not testing geode.c.orig.patch yet
 		if_vr.c is now in ./sys/dev/vr/if_vr.c patch fails
 		dummynet now in sys/netinet/ipfw/ip_dummynet.c  patch fails
-		ip_input.c. patch fails 
+		ip_input.c. patch fails
+		vfs_mount.c fails 
 		
 
 areas to investigate impact
