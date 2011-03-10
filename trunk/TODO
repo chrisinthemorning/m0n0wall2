@@ -1,15 +1,16 @@
 critical areas
 	kernel patches for a few things
 		ehci_pci patch has nothing to patch , files have moved ?
-		not testing geode.c.orig.patch yet
-		if_vr.c is now in ./sys/dev/vr/if_vr.c patch fails
-		dummynet now in sys/netinet/ipfw/ip_dummynet.c  patch fails
-		vfs_mount.c fails 
+		if_vr.c is now in ./sys/dev/vr/if_vr.c patch fails if_vr.c is quite different
+		dummynet now in sys/netinet/ipfw/ip_dummynet.c  patch fails as dummynet is VERY different, ip_input.c patch is irrelevent until this is fixed if still required.
+
 		
 
 areas to investigate impact
+	patch vfs_mount.c fails but not needed as remount is in rc
+	looks like 8.1 doesn't need geode.c.orig.patch as it has these changes already
     GEOM errors on boot
-    some kernel features removed, drivers and ipf maxstates
+    some kernel drivers removed, lnc is gone from 8.1 etc
 	trys to mount md0 not md0a , so i build for md0 now
 	mklibs complains . file not found, this is because of links
 	atareinit.c not found to compile in freebsd6 repo
