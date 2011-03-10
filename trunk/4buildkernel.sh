@@ -10,8 +10,6 @@
 		patch < ip_ftp_pxy.c.orig.patch
 		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/fil.c.orig.patch 
 		patch < fil.c.orig.patch
-		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/ip_input.c.orig.patch 
-		patch < ip_input.c.orig.patch 
 		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/ip_state.c.orig.patch
 		patch < ip_state.c.orig.patch
 		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/mlfk_ipl.c.orig.patch 
