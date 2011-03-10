@@ -1,5 +1,27 @@
 #!/usr/local/bin/bash
 
+# patch kernel / sources
+		cd /usr/src
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/Makefile.orig.patch
+		patch < Makefile.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/options.orig.patch
+		patch < options.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/ip_ftp_pxy.c.orig.patch
+		patch < ip_ftp_pxy.c.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/fil.c.orig.patch 
+		patch < fil.c.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/ip_input.c.orig.patch 
+		patch < ip_input.c.orig.patch 
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/ip_state.c.orig.patch
+		patch < ip_state.c.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/mlfk_ipl.c.orig.patch 
+		patch < mlfk_ipl.c.orig.patch
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/pfil.c.orig.patch 
+		patch < pfil.c.orig.patch 
+		wget http://m0n0wall2.googlecode.com/svn/trunk/kernelpatches/vm_machdep.c.orig.patch 
+		patch < vm_machdep.c.orig.patch 
+
+
 # kernel compile	got to remove ath/ath_hal rg lnc ugen ADAPTIVE_GIANT IPSTATE_MAX IPSTATE_SIZE and sio
 #					rename FAST_IPSEC to IPSEC
 #					add COMPAT_FREEBSD7 AH_SUPPORT_AR5416 and COMPAT43_TTYS

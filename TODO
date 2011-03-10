@@ -1,5 +1,12 @@
 critical areas
-	
+	kernel patches for a few things
+		ehci_pci patch has nothing to patch , files have moved ?
+		not testing geode.c.orig.patch yet
+		if_vr.c is now in ./sys/dev/vr/if_vr.c patch fails
+		dummynet now in sys/netinet/ipfw/ip_dummynet.c  patch fails
+		ip_input.c. patch fails 
+
+		
 
 areas to investigate impact
     GEOM errors on boot
@@ -10,7 +17,7 @@ areas to investigate impact
 	if_vlan.ko and if_tap.ko not to be found except in /boot/kernel
 	disklabel doesn't have -s option anymore
 	freebsd6 repo m0n0wall.files has bin/[:bin/test
-	kernel patches for a few things
+
 
 areas to improve
 	support for ALIX/WRAP GENERICwithSerial
