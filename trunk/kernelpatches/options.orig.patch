@@ -1,0 +1,13 @@
+--- sys/conf/options.orig	2008-02-17 21:32:18.000000000 +0100
++++ sys/conf/options	2008-02-23 19:33:50.000000000 +0100
+@@ -362,6 +362,10 @@
+ IPFILTER_LOG		opt_ipfilter.h
+ IPFILTER_LOOKUP		opt_ipfilter.h
+ IPFILTER_DEFAULT_BLOCK	opt_ipfilter.h
++# Existing options made configurable for m0n0wall
++IPSTATE_SIZE           opt_ipfilter.h
++IPSTATE_MAX            opt_ipfilter.h
++# End of m0n0wall additions
+ IPFIREWALL		opt_ipfw.h
+ IPFIREWALL_VERBOSE	opt_ipfw.h
+ IPFIREWALL_VERBOSE_LIMIT	opt_ipfw.h
