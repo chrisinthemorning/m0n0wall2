@@ -42,8 +42,20 @@
         mdconfig -d -u 20
         gzip -9f mfsrootpc
 	
-# Make  img
-	dd if=/dev/zero of=image.bin bs=1k count=`ls -l mfsrootpc.gz kernel.gz | tr -s " " " " | cut -f5 -d " " | xargs | tr " " "+" | xargs -I {} echo '(2097152+{})/1024' | bc`
+# Make firmware img with 2MB space
+	# Make staging area to help calc space
+	mkdir /usr/m0n0wall/build81/tmp/firmwaretmp
+ 	
+	cp /usr/m0n0wall/build81/tmp/kernel.gz /usr/m0n0wall/build81/tmp/firmwaretmp
+	cp /usr/m0n0wall/build81/tmp/mfsrootpc.gz /usr/m0n0wall/build81/tmp/firmwaretmp/mfsroot.gz
+	cp /usr/m0n0wall/build81/tmp/bootdir/{loader,loader.rc} /usr/m0n0wall/build81/tmp/firmwaretmp
+	cp /usr/m0n0wall/build81/tmp/acpi.ko /usr/m0n0wall/build81/tmp/firmwaretmp
+	cp /usr/m0n0wall/build81/m0n0fs/conf.default/config.xml /usr/m0n0wall/build81/tmp/firmwaretmp
+
+	cd /usr/m0n0wall/build81/tmp
+	dd if=/dev/zero of=image.bin bs=1k count=`du -d0 /usr/m0n0wall/build81/tmp/firmwaretmp  | cut -b1-5 | tr " " "+" | xargs -I {} echo '(2048)+{}' | bc`
+	rm -rf /usr/m0n0wall/build81/tmp/firmwaretmp
+	
 	mdconfig -a -t vnode -f /usr/m0n0wall/build81/tmp/image.bin -u 30
 	disklabel  -wn  /dev/md30 auto |  awk '/unused/{if (M==""){sub("unused","4.2BSD");M=1}}{print}' > md.label
         bsdlabel -m  i386 -R -B -b /usr/m0n0wall/build81/tmp/bootdir/boot /dev/md30 md.label
