@@ -64,10 +64,10 @@
         cd /usr/ports/net/isc-dhcp31-server
         make
         install -s work/dhcp-*/work.freebsd/server/dhcpd /usr/m0n0wall/build81/m0n0fs/usr/local/sbin/
-# dhclient	
-		cd /usr/src/sbin/dhclient
-		make
-		install -s dhclient /usr/m0n0wall/build81/m0n0fs/sbin/
+# ISC dhcp-client
+	cd /usr/ports/net/isc-dhcp31-client
+	make
+	install -s work/dhcp-*/work.freebsd/client/dhclient /usr/m0n0wall/build81/m0n0fs/sbin/
 # dnsmasq
         cd /usr/ports/dns/dnsmasq
 		make
