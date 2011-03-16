@@ -34,7 +34,7 @@
         cd ..
 # wol
         cd /usr/m0n0wall/build81/tmp
-        wget "http://downloads.sourceforge.net/project/wake-on-lan/wol/0.7.1/wol-0.7.1.tar.gz?use_mirror=mesh"
+        wget "http://downloads.sourceforge.net/project/wake-on-lan/wol/0.7.1/wol-0.7.1.tar.gz"
         tar -zxf wol-0.7.1.tar.gz
         cd wol-0.7.1
         ./configure --disable-nls
@@ -127,7 +127,7 @@
         ln -s /usr/local/bin/autoconf-2.62 /usr/local/bin/autoconf
         ln -s /usr/local/bin/autoheader-2.62 /usr/local/bin/autoheader
         cd /usr/m0n0wall/build81/tmp
-        wget "http://downloads.sourceforge.net/project/net-snmp/ucd-snmp/4.2.7.1/ucd-snmp-4.2.7.1.tar.gz?use_mirror=ovh"
+        wget "http://downloads.sourceforge.net/project/net-snmp/ucd-snmp/4.2.7.1/ucd-snmp-4.2.7.1.tar.gz"
         tar -zxf ucd-snmp-4.2.7.1.tar.gz
         cd ucd-snmp-4.2.7.1
         ./configure  --without-openssl --disable-debugging --enable-static \
