@@ -5,11 +5,12 @@ rehash
 mkdir -p /usr/m0n0wall/build81
 cd  /usr/m0n0wall/build81
 wget http://m0n0wall2.googlecode.com/svn/trunk/doall.sh
-wget http://m0n0wall2.googlecode.com/svn/trunk/1makebuildenv.sh
-wget http://m0n0wall2.googlecode.com/svn/trunk/2makebinaries.sh
-wget http://m0n0wall2.googlecode.com/svn/trunk/3patchtools.sh
-wget http://m0n0wall2.googlecode.com/svn/trunk/4buildkernel.sh
-wget http://m0n0wall2.googlecode.com/svn/trunk/5makeimage.sh
+wget http://svn.m0n0.ch/wall/branches/freebsd8/build/newbuild/1makebuildenv.sh
+wget http://svn.m0n0.ch/wall/branches/freebsd8/build/newbuild/2makebinaries.sh
+wget http://svn.m0n0.ch/wall/branches/freebsd8/build/newbuild/3patchtools.sh
+wget http://m0n0wall2.googlecode.com/svn/trunk/mymods.sh
+wget http://svn.m0n0.ch/wall/branches/freebsd8/build/newbuild/4buildkernel.sh
+wget http://svn.m0n0.ch/wall/branches/freebsd8/build/newbuild/5makeimage.sh
 chmod a+rx *.sh
 
 echo "I will leave you in a bash shell now"
