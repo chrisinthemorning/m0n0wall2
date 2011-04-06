@@ -1,7 +1,7 @@
 #!/usr/local/bin/bash
 
 cd /usr/m0n0wall/build81/tmp
-svn co https://m0n0mods.googlecode.com/svn/trunk/ntpd
+svn co http://m0n0mods.googlecode.com/svn/trunk/ntpd
 
 chmod a+rx /usr/m0n0wall/build81/tmp/ntpd/usr/local/www/*
 chmod a+rx /usr/m0n0wall/build81/tmp/ntpd/etc/inc/*
