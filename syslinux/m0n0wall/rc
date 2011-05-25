@@ -1,7 +1,7 @@
 #!/bin/sh
 
-/sbin/mount_msdosfs /dev/da0s1 /mnt/m0n0fat
-/sbin/mount_msdosfs /dev/ad0s1 /mnt/m0n0fat
-/sbin/mount_msdosfs /dev/ad0  /mnt/m0n0fat
+/sbin/mount_msdosfs /dev/da0s1 /mnt/m0n0fat > /dev/null 2>&1
+/sbin/mount_msdosfs /dev/ad0s1 /mnt/m0n0fat > /dev/null 2>&1
+/sbin/mount_msdosfs /dev/ad0  /mnt/m0n0fat > /dev/null 2>&1
 /mnt/m0n0fat/m0n0fs/sbin/mount -t devfs dev /mnt/m0n0fat/m0n0fs/dev
 /usr/sbin/chroot /mnt/m0n0fat/m0n0fs /etc/rc.syslinux
