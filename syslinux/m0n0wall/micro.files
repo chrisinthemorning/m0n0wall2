@@ -1,0 +1,7 @@
+etc/login.conf
+libexec/ld-elf.so.1
+sbin/mount
+sbin/init
+bin/sh
+usr/sbin/chroot
+sbin/mount_msdosfs
