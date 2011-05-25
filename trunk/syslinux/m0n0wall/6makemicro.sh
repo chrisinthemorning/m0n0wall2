@@ -1,6 +1,5 @@
 #!/usr/local/bin/bash
 
-set -e
 
 if [ -z "$MW_BUILDPATH" -o ! -d "$MW_BUILDPATH" ]; then
 	echo "\$MW_BUILDPATH is not set"
@@ -20,6 +19,7 @@ perl $MW_BUILDPATH/freebsd8/build/minibsd/mkmini.pl $MW_BUILDPATH/freebsd8/build
 perl $MW_BUILDPATH/freebsd8/build/minibsd/mklibs.pl $MW_BUILDPATH/m0n0fsmicro > /tmp/m0n0wallmicro.libs
 perl $MW_BUILDPATH/freebsd8/build/minibsd/mkmini.pl /tmp/m0n0wallmicro.libs / $MW_BUILDPATH/m0n0fsmicro
 cp  $MW_BUILDPATH/freebsd8/build/scripts/rc $MW_BUILDPATH/m0n0fsmicro/etc
+find $MW_BUILDPATH/m0n0microfs/ | xargs strip -s 2> /dev/null
 
 makeminimfsroot() {
 	PLATFORM=$1
@@ -101,7 +101,7 @@ makeimage() {
 	makeimage generic-pc-syslinux 2048
 
 # Make syslinux tgz file 
-	mkdir $MW_BUILDPATH/tmp/syslinux
+	mkdir -p $MW_BUILDPATH/tmp/syslinux
 	cd $MW_BUILDPATH/tmp/syslinux
 	
 	echo "default M0n0wall" > $MW_BUILDPATH/tmp/syslinux/syslinux.cfg
@@ -109,16 +109,21 @@ makeimage() {
 	echo "linux memdisk" >> $MW_BUILDPATH/tmp/syslinux/syslinux.cfg
 	echo "initrd generic-pc-syslinux-$VERSION.img" >> $MW_BUILDPATH/tmp/syslinux/syslinux.cfg
 	echo "append raw ro noedd" >> $MW_BUILDPATH/tmp/syslinux/syslinux.cfg
-	
+ 
 	cp -R $MW_BUILDPATH/m0n0fs $MW_BUILDPATH/tmp/syslinux
+	rm  $MW_BUILDPATH/tmp/syslinux/m0n0fs/conf
+	mkdir $MW_BUILDPATH/tmp/syslinux/m0n0fs/conf
+	mkdir -p $MW_BUILDPATH/tmp/syslinux/m0n0fs/cf/conf
+	cp $MW_BUILDPATH/m0n0fs/conf.default/config.xml $MW_BUILDPATH/tmp/syslinux/m0n0fs/conf
+	cp $MW_BUILDPATH/m0n0fs/conf.default/config.xml  $MW_BUILDPATH/tmp/syslinux/m0n0fs/cf/conf
 	mv $MW_BUILDPATH/images/generic-pc-syslinux-$VERSION.img $MW_BUILDPATH/tmp/syslinux
-	tar -zcf generic-pc-syslinux-$VERSION.tgz m0n0fs syslinux.cfg generic-pc-syslinux-$VERSION.img
+	tar -zcf generic-pc-syslinux-$VERSION.tgz m0n0fs syslinux.cfg generic-pc-syslinux-$VERSION.img 
 	mv generic-pc-syslinux-$VERSION.tgz $MW_BUILDPATH/images/
 	rm -rf $MW_BUILDPATH/tmp/syslinux
 	
 	echo " done"
 
- scp /usr/m0n0wall/build82/images/generic-pc-syslinux-1.8.0b0.tgz user@10.60.47.199:
- ssh user@10.60.47.199 sudo /root/doit.sh
-ssh user@10.60.47.198 sudo bash /root/doit.sh
+ scp /usr/m0n0wall/build82/images/generic-pc-syslinux-1.8.0b0.tgz awhite@10.60.47.199:
+ ssh awhite@10.60.47.199 sudo /root/doit.sh
+ssh awhite@10.60.47.198 sudo bash /root/doit.sh
 
