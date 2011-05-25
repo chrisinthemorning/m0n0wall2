@@ -1,0 +1,4 @@
+#!/bin/sh
+/sbin/mdmfs -s 4m md2 /var 
+/etc/rc
+exit 0
